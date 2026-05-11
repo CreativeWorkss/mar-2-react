@@ -1,0 +1,40 @@
+.mobile-image {
+  height: 500px;
+  width: 400px;
+}
+
+.section {
+  display: flex;
+}
+
+.mobile-main {
+  display: flex;
+  margin-left: 100px;
+  padding: 50px;
+}
+
+.section-two {
+  margin-left: 40px;
+}
+
+.section-book {
+  display: flex;
+}
+
+.para {
+  max-width: 400px;
+  color: black;
+}
+
+.book {
+  width: 200px;
+  padding: 20px;
+  margin-right: 20px;
+  border-radius: 20px;
+  border-style: none;
+  background-color: rgb(32, 187, 187);
+}
+
+a {
+  text-decoration-line: none;
+}

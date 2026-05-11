@@ -1,0 +1,131 @@
+/* Main banner */
+.banner {
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+  color: white;
+}
+
+/* Grid container instead of flex */
+.banner-panels {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr); /* 5 equal panels */
+  height: 100%;
+}
+
+/* Each movie panel */
+.panel {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  transition: transform 0.5s ease;
+  cursor: pointer;
+  position: relative;
+}
+
+/* Hover zoom effect */
+.panel:hover {
+  transform: scale(1.08);
+  z-index: 2;
+}
+
+/* Optional: dark overlay per panel (better visibility) */
+.panel::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.3);
+}
+
+/* Main overlay across banner */
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 0.9),
+    rgba(0, 0, 0, 0.2),
+    rgba(0, 0, 0, 0.9)
+  );
+  z-index: 1;
+}
+
+/* Center content */
+.banner-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 3;
+  text-align: center;
+}
+
+/* Logo */
+/* Wrapper */
+.logo-wrapper {
+  position: relative;
+  text-align: center;
+  color: white;
+}
+
+/* Disney text */
+.disney {
+  font-family: "Segoe UI", Arial, sans-serif;
+  font-size: 2.2rem;
+  font-style: italic;
+  font-weight: 600;
+  letter-spacing: 1px;
+  position: relative;
+}
+
+/* Plus sign */
+.plus {
+  color: #1f80e0;
+  margin-left: 4px;
+  font-weight: bold;
+}
+
+/* Arc above Disney+ */
+.arc {
+  position: absolute;
+  top: -10px;
+  left: 50%;
+  width: 140px;
+  height: 70px;
+  border-top: 3px solid #1f80e0;
+  border-radius: 50%;
+  transform: translateX(-50%);
+}
+
+/* Hotstar text */
+.hotstar {
+  font-family: "Segoe UI", Arial, sans-serif;
+  font-size: 2.8rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  margin-top: 5px;
+}
+
+/* Glow effect */
+.logo-wrapper {
+  text-shadow:
+    0 0 10px rgba(31, 128, 224, 0.6),
+    0 0 20px rgba(31, 128, 224, 0.4);
+}
+
+/* Languages */
+.languages {
+  margin-top: 15px;
+  font-size: 1.2rem;
+}
+
+.languages span {
+  margin: 0 10px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.languages span:hover {
+  color: #00a8ff;
+}

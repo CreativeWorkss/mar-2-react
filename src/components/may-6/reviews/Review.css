@@ -1,0 +1,170 @@
+/* Reviews.css */
+
+.review-container {
+  margin-top: 50px;
+
+  padding: 40px;
+
+  background: linear-gradient(to bottom right, #ffffff, #f8f9ff);
+
+  border-radius: 25px;
+
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+
+  overflow: hidden;
+}
+
+/* HEADING */
+
+.review-heading {
+  font-size: 40px;
+
+  font-weight: bold;
+
+  color: #5b21b6;
+
+  margin-bottom: 40px;
+
+  position: relative;
+}
+
+.review-heading::after {
+  content: "";
+
+  width: 90px;
+
+  height: 5px;
+
+  background-color: #22c1c3;
+
+  position: absolute;
+
+  left: 0;
+  bottom: -12px;
+
+  border-radius: 10px;
+}
+
+/* REVIEW CARD */
+
+.review-card {
+  background-color: white;
+
+  padding: 30px;
+
+  border-radius: 20px;
+
+  margin-bottom: 25px;
+
+  transition: 0.3s;
+
+  border: 1px solid #ececec;
+
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+.review-card:hover {
+  transform: translateY(-5px);
+
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+}
+
+/* TOP SECTION */
+
+.review-top {
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+
+  margin-bottom: 15px;
+}
+
+/* USER NAME */
+
+.review-top h3 {
+  font-size: 24px;
+
+  color: #222;
+
+  font-weight: 600;
+}
+
+/* STAR */
+
+.review-top span {
+  font-size: 20px;
+
+  letter-spacing: 2px;
+}
+
+/* REVIEW TEXT */
+
+.review-card p {
+  font-size: 17px;
+
+  line-height: 1.9;
+
+  color: #555;
+}
+
+/* USER IMAGE + NAME */
+
+.user-info {
+  display: flex;
+
+  align-items: center;
+
+  gap: 15px;
+}
+
+.user-avatar {
+  width: 55px;
+
+  height: 55px;
+
+  border-radius: 50%;
+
+  background: linear-gradient(135deg, #5b21b6, #22c1c3);
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  color: white;
+
+  font-size: 22px;
+
+  font-weight: bold;
+}
+
+/* RESPONSIVE */
+
+@media screen and (max-width: 768px) {
+  .review-container {
+    padding: 25px;
+  }
+
+  .review-heading {
+    font-size: 30px;
+  }
+
+  .review-card {
+    padding: 20px;
+  }
+
+  .review-top {
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    gap: 10px;
+  }
+
+  .review-card p {
+    font-size: 15px;
+  }
+}
