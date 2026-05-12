@@ -1,6 +1,6 @@
 // Product.jsx
 
-import React from "react";
+import React, { useState } from "react";
 import { useParams } from "react-router-dom";
 import { mobiles } from "./mobile";
 
@@ -14,14 +14,44 @@ function Product() {
   const filteredData = mobiles.filter((value) => value.id == prodId);
 
   let final = filteredData.map((value) => {
+    // MULTIPLE IMAGES
+    const images = [
+      value.url,
+      "https://rukminim1.flixcart.com/image/1366/1366/xif0q/mobile/s/n/p/-original-imahfrff5gqmz6ed.jpeg?q=90",
+      "https://fdn2.gsmarena.com/vv/pics/apple/apple-iphone-15-1.jpg",
+      "https://m.media-amazon.com/images/I/61amb0CfMGL.jpg",
+    ];
+
+    const [selectedImage, setSelectedImage] = useState(images[0]);
+
     return (
-      <div className="product-container">
-        {/* IMAGE SECTION */}
+      <div className="product-container" key={value.id}>
+        {/* LEFT SECTION */}
         <div className="image-section">
-          <img src={value.url} alt="mobile" />
+          {/* MAIN IMAGE */}
+          <div className="main-image">
+            <img src={selectedImage} alt="mobile" />
+          </div>
+
+          {/* IMAGE CHANGER */}
+          <div className="image-gallery">
+            {images.map((img, index) => {
+              return (
+                <img
+                  key={index}
+                  src={img}
+                  alt="thumbnail"
+                  className={
+                    selectedImage === img ? "thumbnail active" : "thumbnail"
+                  }
+                  onClick={() => setSelectedImage(img)}
+                />
+              );
+            })}
+          </div>
         </div>
 
-        {/* CONTENT SECTION */}
+        {/* RIGHT SECTION */}
         <div className="content-section">
           <h1>{value.name}</h1>
 

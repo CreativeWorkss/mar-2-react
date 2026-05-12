@@ -18,12 +18,10 @@ class MountUpdateUnmount extends PureComponent {
     console.log(" in component did mount method");
   }
 
-  // updating methods
-
-  //   shouldComponentUpdate() {
-  //     console.log("in should component update method");
-  //     return true;
-  //   }
+  shouldComponentUpdate() {
+    console.log("in should component update method");
+    return true;
+  }
 
   getSnapshotBeforeUpdate() {
     console.log("in get snapshot before update method");

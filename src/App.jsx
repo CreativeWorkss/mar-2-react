@@ -12,6 +12,8 @@ import MobileView from "./components/may-1/MobileView";
 import Basic from "./components/may-11/useEffect/Basic";
 import Dependency from "./components/may-11/useEffect/Dependency";
 import OnlyOnce from "./components/may-11/useEffect/OnlyOnce";
+import Mounting from "./components/may-12/lifecycle/Mounting";
+import MountUpdateUnmount from "./components/may-12/lifecycle/MountUpdateUnmount";
 import Concert from "./components/may-4/Concert";
 import Event from "./components/may-4/Event";
 import CounterOne from "./components/may-5/CounterOne";
