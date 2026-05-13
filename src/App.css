@@ -3,3 +3,17 @@ body {
   margin: 0;
   overflow-x: hidden;
 }
+
+.hoc {
+  background-color: blue;
+  height: 300px;
+}
+
+.hoc-user {
+  background-color: gold;
+}
+
+.hoc-logo {
+  height: 50px;
+  width: 50px;
+}

@@ -5,4 +5,4 @@ function NormalUser(props) {
   return <h1>Do shopping {props.name}</h1>;
 }
 
-export default HOCUser(NormalUser);
+export default NormalUser;
