@@ -51,4 +51,36 @@ export const mobiles = [
       "Dual Camera",
     ],
   },
+  {
+    id: 4,
+
+    name: "Redmi 32 GB",
+
+    url: "https://rukminim2.flixcart.com/image/789/789/xif0q/mobile/4/c/b/-original-imahfkvezr4fcets.jpeg?q=90",
+
+    features: [
+      "128 GB Storage",
+      "6 GB RAM",
+      "5000 mAh Battery",
+      "Snapdragon Processor",
+      "90Hz Display",
+      "Dual Camera",
+    ],
+  },
+  {
+    id: 5,
+
+    name: "Redmi 32 GB",
+
+    url: "https://rukminim2.flixcart.com/image/789/789/xif0q/mobile/4/c/b/-original-imahfkvezr4fcets.jpeg?q=90",
+
+    features: [
+      "128 GB Storage",
+      "6 GB RAM",
+      "5000 mAh Battery",
+      "Snapdragon Processor",
+      "90Hz Display",
+      "Dual Camera",
+    ],
+  },
 ];

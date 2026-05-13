@@ -13,9 +13,9 @@ const GetApiData = () => {
           "https://jsonplaceholder.typicode.com/users",
         );
         console.log("i have data", data);
-        //   const result = await response.json();
+        const result = await response.json();
         // mock the response
-        const result = data;
+        //const result = data;
         console.log("copy the data after here ---- ", JSON.stringify(result));
         setItems(result);
         setDataIsLoaded(true);

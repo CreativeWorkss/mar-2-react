@@ -7,6 +7,7 @@ import { mobiles } from "./mobile";
 import "./Product.css";
 import Header from "./header/Header";
 import Reviews from "./reviews/Reviews";
+import RecommendedProducts from "../may-14/recommend/RecommendedProducts";
 
 function Product() {
   const { prodId } = useParams();
@@ -77,6 +78,7 @@ function Product() {
     <div>
       <Header />
       <div>{final}</div>
+      <RecommendedProducts />
       <Reviews />
     </div>
   );
