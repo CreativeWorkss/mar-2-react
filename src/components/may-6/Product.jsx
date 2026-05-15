@@ -2,9 +2,11 @@
 
 import React, { useState } from "react";
 import { useParams } from "react-router-dom";
+
 import { mobiles } from "./mobile";
 
 import "./Product.css";
+
 import Header from "./header/Header";
 import Reviews from "./reviews/Reviews";
 import RecommendedProducts from "../may-14/recommend/RecommendedProducts";
@@ -23,18 +25,52 @@ function Product() {
       "https://m.media-amazon.com/images/I/61amb0CfMGL.jpg",
     ];
 
+    // STATES
     const [selectedImage, setSelectedImage] = useState(images[0]);
+
+    const [zoomActive, setZoomActive] = useState(false);
+
+    const [backgroundPosition, setBackgroundPosition] = useState("center");
+
+    // HANDLE ZOOM
+    const handleZoom = (event) => {
+      const { left, top, width, height } =
+        event.currentTarget.getBoundingClientRect();
+
+      const x = ((event.clientX - left) / width) * 100;
+
+      const y = ((event.clientY - top) / height) * 100;
+
+      setBackgroundPosition(`${x}% ${y}%`);
+    };
 
     return (
       <div className="product-container" key={value.id}>
         {/* LEFT SECTION */}
         <div className="image-section">
-          {/* MAIN IMAGE */}
-          <div className="main-image">
-            <img src={selectedImage} alt="mobile" />
+          {/* ZOOM CONTAINER */}
+          <div
+            className="zoom-container"
+            onMouseMove={handleZoom}
+            onMouseEnter={() => setZoomActive(true)}
+            onMouseLeave={() => setZoomActive(false)}
+          >
+            {/* NORMAL IMAGE */}
+            <img src={selectedImage} alt="mobile" className="product-image" />
+
+            {/* ZOOM LAYER */}
+            {zoomActive && (
+              <div
+                className="zoom-layer"
+                style={{
+                  backgroundImage: `url(${selectedImage})`,
+                  backgroundPosition: backgroundPosition,
+                }}
+              ></div>
+            )}
           </div>
 
-          {/* IMAGE CHANGER */}
+          {/* IMAGE GALLERY */}
           <div className="image-gallery">
             {images.map((img, index) => {
               return (
@@ -56,14 +92,23 @@ function Product() {
         <div className="content-section">
           <h1>{value.name}</h1>
 
-          <h3>Features</h3>
+          <h3 className="feature-heading">Highlights</h3>
 
-          <ul>
+          {/* FEATURE CARDS */}
+
+          <div className="feature-grid">
             {value.features.map((feature, index) => {
-              return <li key={index}>{feature}</li>;
-            })}
-          </ul>
+              return (
+                <div className="feature-card" key={index}>
+                  <span className="feature-number">0{index + 1}</span>
 
+                  <h4>{feature}</h4>
+                </div>
+              );
+            })}
+          </div>
+
+          {/* BUTTONS */}
           <div className="button-group">
             <button>Buy Now</button>
 
@@ -77,8 +122,11 @@ function Product() {
   return (
     <div>
       <Header />
+
       <div>{final}</div>
+
       <RecommendedProducts />
+
       <Reviews />
     </div>
   );
